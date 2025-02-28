@@ -73,7 +73,7 @@ export default function GrantsPage() {
       </h1>
 
       <p className="text-lg mb-12">
-        Throughout my career, I've been honored to receive recognition for my
+        Throughout my career, I&apos;ve been honored to receive recognition for my
         work and support for impactful journalism projects. These opportunities
         have enabled me to pursue in-depth investigations and bring important
         stories to light.

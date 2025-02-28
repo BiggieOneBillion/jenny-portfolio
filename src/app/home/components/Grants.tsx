@@ -1,7 +1,6 @@
 import { Award, BookOpen, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { InfiniteMovingCards } from "@/components/infinte-moving-cards";
 
@@ -70,24 +69,7 @@ function AwardIcon({ type }: { type: string }) {
 }
 
 export function Grants() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 3;
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerPage >= awards.length ? 0 : prevIndex + itemsPerPage
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0
-        ? Math.max(0, awards.length - itemsPerPage)
-        : prevIndex - itemsPerPage
-    );
-  };
-
-  const visibleAwards = awards.slice(currentIndex, currentIndex + itemsPerPage);
+  const visibleAwards = awards.slice(0, 3);
 
   return (
     <section className="bg-white py-16">
@@ -121,8 +103,6 @@ export function Grants() {
               ))}
             </div>
           </InfiniteMovingCards>
-
-         
         </div>
 
         <div className="text-center mt-8">
